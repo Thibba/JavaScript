@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Agenda Telefonica</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<div class="container">
+				<a class="navbar-brand" href="#">Agenda Telefônica</a>
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<br>
+
+		<div class="container">
+			<div id="contatosView"></div>
+		</div>
+
+		<hr>
+		<br>
+
+		<div class="container">
+			<form id="form" onsubmit="contatoController.adicionaContato(event)">
+				<legend>Adicionar novo contato</legend>
+
+					<div class="form-group">
+						<label for="">Nome</label>
+						<input type="text" class="form-control" id="input_nome" placeholder="Nome" required="true">
+					</div>
+					<div class="form-group">
+						<label for="">Telefone</label>
+						<input type="text" class="form-control" id="input_telefone" placeholder="Telefone" required="true">
+					</div>
+					<div class="form-group">
+						<label for="">Informações</label>
+						<input type="text" class="form-control" id="input_informacoes" placeholder="Outras informações?" required="true">
+					</div>
+				<button type="submit" class="btn btn-primary" id="btn_novo_contato">Salvar</button>
+			</form>
+		</div>
+		<!-- Bootstrap JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="models/Contato.js"></script>
+		<script src="models/ListaContatos.js"></script>
+		<script src="controllers/ContatoController.js"></script>
+		<script src="views/ContatosView.js"></script>
+
+
+		<script>
+			let contatoController = new ContatoController();
+		</script>
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	</body>
+</html>
